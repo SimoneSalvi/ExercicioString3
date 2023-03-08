@@ -18,15 +18,19 @@
             for (int i = 0; i < x.Length; i++)
             {
 
-                if ((x[i] == 'a') || (x[i] == 'e') || (x[i] == 'i') || (x[i] == 'o') || (x[i] == 'u'))
+                if (char.IsLetter(x[i]))
                 {
-                    texto += x[i];
+                    if ((x[i] == 'a') || (x[i] == 'e') || (x[i] == 'i') || (x[i] == 'o') || (x[i] == 'u'))
+                    {
+                        texto += x[i];
+                    }
+                    else
+                    {
+                        texto += a;
+                        texto += x[i];
+                    }
                 }
-                else
-                {
-                    texto += a;
-                    texto += x[i];
-                }
+
 
             }
             Console.WriteLine($"A nova string é {texto}");
